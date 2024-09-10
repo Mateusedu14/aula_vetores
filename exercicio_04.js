@@ -1,17 +1,32 @@
-function contarConsoantes(vetor) {
-    const vogais = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-    let consoantes = [];
+/*
+ Crie um algoritmo que leia o salário bruto de 5 pessoas, e ao final, 
+mostre o salário líquido de todos, considerando 12% de INSS a descontar.
+*/
 
-    for (let i = 0; i < vetor.length; i++) {
-        if (!vogais.includes(vetor[i]) && /[a-zA-Z]/.test(vetor[i])) {
-            consoantes.push(vetor[i]);
-        }
-    }
-
-    alert(`Consoantes lidas: ${consoantes.length}`);
-    alert(`Consoantes: ${consoantes.join(', ')}`);
+let listaSalarios = [];
+for (let i = 0; i < 5; i++) {
+    //leitura do salário em String
+    let salarioString = prompt("Informe o Salario: ");
+    //conversão do salário de string para float (número decimal)
+    let salario = parseFloat(salarioString);
+    //insere na lista (vetor)
+    listaSalarios.push(salario);
 }
 
-// Exemplo de uso
-let vetor = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
-contarConsoantes(vetor);
+let mensagem = "Salarios Líquidos: \n";
+
+for (let j = 0; j < listaSalarios.length; j++) {
+
+    // F1: 
+    // desconto = salariobruto x 12/100 ;
+    // salarioliquido = salariobruto - desconto 
+
+    // F2: 100-12 = 88 
+    // salarioliquido =  salariobruto X 88/100;
+
+    let salLiquido =  listaSalarios[j] - (listaSalarios[j] * (12/100)); 
+    //let salLiquido = listaSalarios[j] * (88 / 100);
+
+    mensagem += "R$ " + salLiquido.toFixed(2) + "\n";
+}
+alert(mensagem);
