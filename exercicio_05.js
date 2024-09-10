@@ -66,3 +66,5 @@ for (let k = 0; k < listaImpares.length; k++) {
 alert(`Os Números inseridos: ${mensagemNumeros} 
        Os Números pares: ${mensagemPares} 
        Os Números impares: ${mensagemImpares}`);
+
+       //finalizado
